@@ -1,7 +1,7 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
@@ -39,4 +39,34 @@
 
 .read-the-docs {
   color: #888;
+} 
+
+.topBar {
+  top: 0;
+  background-color: rgb(56, 56, 56);
+  width: 100vw;
+  padding: 20px;
+  box-shadow: 0 0 20px 0 #646cffaa;
+  text-shadow: 1px 1px 18px #646cffaa;
+} 
+
+h1 {
+  margin-bottom: 0px;
+}
+
+.centerList {
+  width: 100%;
+  display: flexbox;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  margin-top: 40px;
+}
+
+.EmptySearch {
+  margin-top: 200px;
+  font-size: 3em;
+  text-shadow: 1px 1px 18px #646cffaa;
 }
