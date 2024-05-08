@@ -21,7 +21,7 @@ export default function Articles() {
     }
 
     return (
-        <div>
+        <div className="allArticlesPage">
         <p>You're on the ARTICLES page</p>
         <ul className="centerList">
                     {articles.map((article)=>{

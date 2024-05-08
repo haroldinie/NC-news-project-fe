@@ -16,3 +16,11 @@ export function getArticleById(article_id) {
     })
 }
 
+export function getComments(article_id){
+    return axios
+    .get(`https://h-nc-news-project.onrender.com/api/articles/${article_id}/comments`)
+    .catch((err) => {
+        console.log(err)
+    })
+}
+
