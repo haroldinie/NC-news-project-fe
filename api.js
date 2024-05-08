@@ -7,3 +7,12 @@ export function getArticles() {
         console.log(err)
     })
 }
+
+export function getArticleById(article_id) {
+    return axios
+    .get(`https://h-nc-news-project.onrender.com/api/articles/${article_id}`)
+    .catch((err) => {
+    console.log(err)
+    })
+}
+

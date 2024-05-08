@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import AllArticlesCard from "./AllArticlesCard"
 import { useState, useEffect } from "react"
-import { getArticles } from "../../api"
+import { getArticles, getArticleById } from "../../api"
 
 export default function Articles() {
 
     const [ articles, setArticles ] = useState([])
+
+
 
     useEffect(() => {
       getArticles()
@@ -14,12 +16,16 @@ export default function Articles() {
       })
     }, [articles])
 
+    if (!articles) {
+        return <p>Loading....</p>
+    }
+
     return (
         <div>
         <p>You're on the ARTICLES page</p>
         <ul className="centerList">
                     {articles.map((article)=>{
-                        return <AllArticlesCard key={article.article_id} article={article}/> 
+                        return <AllArticlesCard key={article.article_id} article={article} /> 
                     })}
                 </ul>
         </div>
