@@ -13,16 +13,11 @@ export default function AllArticlesCard({article}) {
             <div className="article-title">
             <h3>{article.title}</h3>
             </div>
-        
-            <div className="info">
-                <div className='vertical'>
+            <div className="cardInfo">
             <p className='smallText'>Topic</p>
                 <p>{article.topic}</p>
-                </div>
-            <div className="vertical"> 
             <p className='smallText'>posted by:</p>
             <p>{article.author}</p>
-            </div>
             </div>
         </li>
         </Link>

@@ -13,8 +13,8 @@
 }
 
 .card:hover {
-    background-color: rgb(27, 27, 27);
-    box-shadow: 0 0 30px 10px #646cffaa;
+    background-color: rgb(163, 158, 158);
+    box-shadow: 0 0 10px 10px #ff6464aa;
     scale: 1.05;
 }
 

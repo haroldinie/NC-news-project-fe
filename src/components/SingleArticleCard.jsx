@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react"
 import { getArticleById } from "../../api"
 import { useParams } from "react-router-dom"
+import Comments from "./Comments"
 
 export default function SingleArticleCard(){
 
     const {article_id} = useParams()
     const [article, setArticle] = useState([])
     // const [articleId, setarticleId] = useState("")
-
 
     
     useEffect(() => {
@@ -19,6 +19,7 @@ export default function SingleArticleCard(){
           setArticle(articleData.data)
         })
     }, [article_id])
+
     
     if (!article) {
         return <p>Loading....</p>
@@ -26,7 +27,8 @@ export default function SingleArticleCard(){
 
 
     return (
-        <ul className="card2">
+        <ul className="singleArticlePage">
+            <div className="singleArticleCard">
         <div className="image2">
         <img className="imageb2" src={article.article_img_url} alt="no image"/>
         </div>
@@ -41,32 +43,34 @@ export default function SingleArticleCard(){
         <br>
         </br>
         <div className="info2">
-            <div className='vertical2'>
-        <p className='smallText2'>Topic</p>
+            
+        <p>Topic</p>
             <p>{article.topic}</p>
-            </div>
-        <div className="vertical2"> 
-        <p className='smallText2'>posted by:</p>
+            
+         
+        <p>posted by:</p>
         <p>{article.author}</p>
-        </div>
-        <div className="createdDate">
+        
+     
             <p>{article.created_at}</p>
+       
         </div>
-        <div>
+        </div>
+        
             <br>
             </br>
-        <div className="vote">Vote count:</div>
+        
+        <div className="vote">Vote count:
         <p>{article.votes}</p>
         <button>Vote up</button>
         <button>Vote down</button>
         </div>
-        <div>
             <br>
             </br>
-        <div className='comments'>Comment count:</div>
+        <div className='comments'>Comment count:
             <p>{article.comment_count}</p>
-        </div>
-        </div>
+            <Comments/>
+            </div>
     </ul>
 
     )
