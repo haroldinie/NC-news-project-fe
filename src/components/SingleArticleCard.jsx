@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { getArticleById } from "../../api"
+import { getArticleById, patchVote } from "../../api"
 import { useParams } from "react-router-dom"
 import Comments from "./Comments"
 
@@ -7,8 +7,12 @@ export default function SingleArticleCard(){
 
     const {article_id} = useParams()
     const [article, setArticle] = useState([])
-    // const [articleId, setarticleId] = useState("")
+    const [voteChange, setVoteChange] = useState(0)
 
+    const handleVote = (vote) => {
+        patchVote(article_id, vote);
+        setVoteChange(vote)
+    }
     
     useEffect(() => {
         getArticleById(article_id)
@@ -43,30 +47,20 @@ export default function SingleArticleCard(){
         <br>
         </br>
         <div className="info2">
-            
-        <p>Topic</p>
-            <p>{article.topic}</p>
-            
-         
-        <p>posted by:</p>
-        <p>{article.author}</p>
-        
-     
-            <p>{article.created_at}</p>
-       
+            <div className="vertical">
+        <p>Topic: {article.topic}</p>
+        <p>posted by:{article.author}</p>
+            <p>posted: {article.created_at}</p>
+            </div>
+        <div className="vote">
+        <button disabled={voteChange === 1} onClick ={() => handleVote(1)}>⇞</button>
+        <div>Votes
+        <p>{article.votes + voteChange}</p>
+        <button disabled={voteChange === -1}onClick ={() => handleVote(-1)}>⇟</button>
         </div>
         </div>
-        
-            <br>
-            </br>
-        
-        <div className="vote">Vote count:
-        <p>{article.votes}</p>
-        <button>Vote up</button>
-        <button>Vote down</button>
         </div>
-            <br>
-            </br>
+        </div>
         <div className='comments'>Comment count:
             <p>{article.comment_count}</p>
             <Comments/>
