@@ -4,12 +4,11 @@ import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Home from './components/Home'
 import Articles from './components/Articles'
+import SingleArticleCard from './components/SingleArticleCard'
 import { Topics } from './components/Topics'
-import {getArticles} from '../api'
+import {getArticles, getArticleById} from '../api'
 
 function App() {
-
-
 
 
   return (
@@ -21,7 +20,7 @@ function App() {
     <Routes> 
        <Route path="/" element={<Home />} />
       <Route path="/articles" element={ <Articles/>} />
-      {/* <Route path="/articles" element={ <Articles articles={articles} />} /> */}
+      <Route path="/articles/:article_id" element={ <SingleArticleCard/>} />
 
        <Route path="/topics" element={<Topics />} />
     </Routes>
