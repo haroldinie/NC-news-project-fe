@@ -15,9 +15,10 @@ export default function AllArticlesCard({article}) {
             </div>
             <div className="cardInfo">
             <p className='smallText'>Topic</p>
-                <p>{article.topic}</p>
-            <p className='smallText'>posted by:</p>
-            <p>{article.author}</p>
+            <p className='smallText'>posted by:</p> 
+            </div>
+            <div className='cardInfo9'>{article.topic} 
+            <div>{article.author}</div>
             </div>
         </li>
         </Link>
