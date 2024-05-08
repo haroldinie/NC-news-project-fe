@@ -24,3 +24,10 @@ export function getComments(article_id){
     })
 }
 
+export function patchVote(article_id, vote) {
+    return axios
+    .patch(`https://h-nc-news-project.onrender.com/api/articles/${article_id}`, {inc_votes: vote})
+    .catch((err) => {
+        console.log(err)
+    })
+}
