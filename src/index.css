@@ -12,7 +12,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 html {
   position: relative;
 }
@@ -41,6 +40,17 @@ h6 {
   color: #f8f7f7;
 }
 
+.body-text {
+  padding-left: 20px;
+  padding-right: 20px;  
+  text-align: left;
+}
+
+/* .body-text2 {
+  text-align: center;
+  border: 200px;
+} */
+
 header {
   display: flex;
   flex-direction: row;
@@ -61,7 +71,7 @@ h1 {
   display: flex;
   width: 30%;
   justify-content: space-around;
-}
+  }
 
 .allArticlesPage {
   display: flex;
@@ -70,21 +80,108 @@ h1 {
   padding-top: 50px;
 }
 
+
+/* .card {
+  display:flexbox;
+  flex-direction: column;
+  background-color: rgb(48, 48, 48);
+  margin: 30px;
+  border-radius: 10px;
+  width: 600px;
+  height: 400px;
+  justify-content: space-around;
+  /* box-shadow: 0 0 20px 0 #ff6464aa; */
+
+
+.card:hover {
+  background-color: rgb(235, 232, 232);
+  box-shadow: 0 0 10px 0px #ff6464aa;
+  scale: 1.05;
+}
+
+.article-title{
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  width: 80%;
+  justify-content: space-between;
+  font-size: 0.6em;
+  margin: 0px;
+  font-size: 1em;
+  font-weight: 600;
+  align-items: center;
+  width: 80%;
+  padding: 20px;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.4em;
+}
+
+.imageb {
+  max-width: 300px;
+  max-height: 400px;
+  padding-top: 20px;
+}
+
+.imageb2 {
+  padding-top: 20px;
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-right: 30px;
+}
+
+.genre {
+  display: flex;
+  flex-direction: row;
+  font-size: xx-small;
+  justify-content: space-around;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.smallText {
+  font-size: 0.8em;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .card {
   display: flex;
   flex-direction: column;
-  background-color: rgb(168, 167, 167);
+  background-color:  rgb(235, 232, 232);
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 10px;
   max-width: 800px;
   width: 500px;
   align-items: center;
+  color: black;
 }
 
-h3 {
-  max-width: 100%;
-}
+
 
 .image {
   padding-right: -30px;
@@ -107,6 +204,7 @@ h3 {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  font-weight: 300;
 }
 
 .singleArticlePage {
@@ -119,7 +217,7 @@ h3 {
 .singleArticleCard {
   display: flex;
   flex-direction: column;
-  background-color: rgb(168, 167, 167);
+  background-color: rgb(235, 232, 232);
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 10px;
@@ -146,7 +244,7 @@ h3 {
 .comments {
   display: flex;
   flex-direction: column;
-  background-color: rgb(168, 167, 167);
+  background-color: rgb(235, 232, 232);
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 10px;
@@ -157,7 +255,7 @@ h3 {
 .commentCard {
   display: flex;
   flex-direction: column;
-  background-color: rgb(168, 167, 167);
+  background-color:rgb(235, 232, 232);
   margin-bottom: 20px;
   padding: 5px;
   border: 1px solid #ee0f0f;
@@ -169,15 +267,51 @@ h3 {
 
 
 
-
-a {
+.link {
   font-weight: 500;
   color: #030000aa;
   text-decoration: inherit;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  /* background-color: #f12727aa; */
+  cursor: pointer;
+  transition: border-color 0.25s;
 }
 a:hover {
-  color: #f12727aa;
+  /* color: #f12727aa;   */
+  border-color: #f12727aa;
 }
+
+.author_created_at {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* .postCommentForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */
+
+/* .linkb { */
+  /* font-weight: 500;
+  color: #030000aa;
+  text-decoration: inherit;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit; */
+  /* background-color: #f12727aa; */
+  /* cursor: pointer;
+  transition: border-color 0.25s; */
+/* } */
 
 /* body {
   margin: 0;
@@ -193,8 +327,8 @@ a:hover {
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  border-radius: 10px;
+  border: 2px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -205,7 +339,7 @@ button {
 }
 button:hover {
   border-color: #f12727aa;
-  background-color: #ee0f0f;
+  /* background-color: #ee0f0f; */
 }
 button:focus,
 button:focus-visible {

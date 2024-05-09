@@ -64,19 +64,24 @@ export default function Comments(){
         <ul className="centerList">
         <div className="postComment">
         <form
+        className="postCommentForm"
         onSubmit={
           handleSubmit
         }
       >
-        <label htmlFor="comment">Comment:</label>
+        <label htmlFor="comment"
+        ></label>
         <input 
         className="commentBox"
+        placeholder="type comment here"
         type="text"
         id="comment"
         value={commentText}
         onChange={(e) => setCommentText(e.target.value)}
         />
+        <div>
         <button type="submit">Post comment</button>
+        </div>
         </form>
         </div>
         <br>
