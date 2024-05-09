@@ -36,3 +36,10 @@ export function postComment(article_id, comment) {
     return axios
     .post(`https://h-nc-news-project.onrender.com/api/articles/${article_id}/comments`, {author: "grumpy19", body: comment})
 }
+
+export function deleteComment(comment_id) {
+    console.log(comment_id)
+    return axios
+    .delete(`https://h-nc-news-project.onrender.com/api/comments/${comment_id}`)
+}
+

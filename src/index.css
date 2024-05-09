@@ -35,6 +35,12 @@ h4 {
   padding-top: 20px;
 }
 
+h6 {
+  font-weight:900;
+  font-size: large;
+  color: #f8f7f7;
+}
+
 header {
   display: flex;
   flex-direction: row;

@@ -9,7 +9,7 @@ export default function Comments(){
     const [comments, setComments] = useState([])
     const [commentText, setCommentText] = useState("")
     const [isLoading, setIsLoading] = useState(false)
-
+    const [refresh, setRefresh] = useState(0)
     
     useEffect(() => {
         setIsLoading(true)
@@ -22,7 +22,7 @@ export default function Comments(){
         .catch((err) => {
             console.log(err)
         })
-    }, [article_id])
+    }, [article_id, refresh])
 
     
     function handleSubmit(event) {
@@ -52,6 +52,7 @@ export default function Comments(){
         </svg>
         <span className="sr-only">Loading...</span>
     </div>
+    <h6>Loading...</h6>
     </div>
         )
         
@@ -81,7 +82,7 @@ export default function Comments(){
         <br>
         </br>
                     {comments.map((comment)=>{
-                        return <CommentsCard key={comment.comment_id} comment={comment} /> 
+                        return <CommentsCard setRefresh={setRefresh} key={comment.comment_id} comment={comment} article_id={article_id} /> 
                     })}
                 </ul>
             
