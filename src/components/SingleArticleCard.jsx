@@ -17,7 +17,6 @@ export default function SingleArticleCard(){
     useEffect(() => {
         getArticleById(article_id)
         .then((articleData) => {
-          console.log(articleData.data);
           const splitDate = articleData.data.created_at.split("T")
           articleData.data.created_at = splitDate[0]
           setArticle(articleData.data)

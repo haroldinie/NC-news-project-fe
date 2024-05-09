@@ -31,3 +31,8 @@ export function patchVote(article_id, vote) {
         console.log(err)
     })
 }
+
+export function postComment(article_id, comment) {
+    return axios
+    .post(`https://h-nc-news-project.onrender.com/api/articles/${article_id}/comments`, {author: "grumpy19", body: comment})
+}
