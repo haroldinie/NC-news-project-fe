@@ -53,7 +53,7 @@ export default function SingleArticleCard(){
         <br>
         </br>
         <div className="body-text">
-            <p>{article.body}</p>
+            <p className="body-text">{article.body}</p>
             </div>
         <br>
         </br>

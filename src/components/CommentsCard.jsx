@@ -53,9 +53,10 @@ export default function CommentsCard({comment, article_id, setRefresh}) {
     return (
         <li className="commentCard">
             <div className="author_created_at">
+                <div className="author_created">
             <h5>{comment.author}</h5>
             <p>{comment.created_at}</p>
-            
+            </div>
             {loggedUser === comment.author && <button className="deleteButton"value={comment.comment_id}
             onClick={(event) => handleDelete(event.target.value)}
             >✖</button>}
