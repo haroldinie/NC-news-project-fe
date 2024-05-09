@@ -1,4 +1,9 @@
 export default function CommentsCard({comment}) {
+
+
+    const splitDate = comment.created_at.split("T")
+    const formattedDate = splitDate[0].split("-").reverse().join()
+    comment.created_at = formattedDate
     return (
         <li className="commentCard">
             <div className="author_created_at">
