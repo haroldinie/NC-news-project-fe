@@ -4,6 +4,8 @@ import { Link, useParams } from "react-router-dom"
 
 
 export default function AllArticlesCard({article}) {
+
+    
     return (
         <Link className="link" to ={`/articles/${article.article_id}`}>
         <li className="card">
