@@ -7,6 +7,7 @@ export default function AllArticlesCard({article}) {
 
     
     return (
+        <div className='allArticlesPageCards'>
         <Link className="linkb" to ={`/articles/${article.article_id}`}>
         <li className="card">
             <div className="image">
@@ -24,5 +25,6 @@ export default function AllArticlesCard({article}) {
             </div>
         </li>
         </Link>
+        </div>
     )
 }

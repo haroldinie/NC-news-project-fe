@@ -12,10 +12,13 @@ export default function Articles() {
     useEffect(() => { 
         setIsLoading(true)
       getArticles()
-      .then((articleData) => {
-        setArticles(articleData.data.articles)
+      .then((articles) => {
+        setArticles(articles)
         setIsLoading(false)
       })
+      .catch((err) => {
+        console.log(err)    
+    })
     }, [])
 
 
@@ -35,7 +38,6 @@ export default function Articles() {
     ) :
     (
         <div className="allArticlesPage">
-        <p>You're on the ARTICLES page</p>
         <ul className="centerList">
                     {articles.map((article)=>{
                         return <AllArticlesCard key={article.article_id} article={article} /> 

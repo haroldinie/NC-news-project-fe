@@ -26,7 +26,13 @@ html {
 .commentBox {
   border-color: #ee0f0f;
 }
-
+.selecta {
+  border-color: #ee0f0f;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: red;
+  max-width: 50%;
+}
 
 h4 {
   font-weight: bold;
@@ -263,10 +269,6 @@ h1 {
   /* align-items: center; */
 }
 
-
-
-
-
 .link {
   font-weight: 500;
   color: #030000aa;
@@ -281,6 +283,22 @@ h1 {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
+.articleByTopics {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 100%;
+  /* flex-direction:column; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+}
+
+.allArticlesPageCards {
+  display: inline-grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  max-width: 100%;
+}
+
 a:hover {
   /* color: #f12727aa;   */
   border-color: #f12727aa;
@@ -298,8 +316,8 @@ a:hover {
   justify-content: space-between;
 } */
 
-/* .linkb { */
-  /* font-weight: 500;
+/* .linkb { 
+  font-weight: 500;
   color: #030000aa;
   text-decoration: inherit;
   border-radius: 10px;
@@ -308,10 +326,10 @@ a:hover {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit; */
-  /* background-color: #f12727aa; */
-  /* cursor: pointer;
-  transition: border-color 0.25s; */
-/* } */
+  /* background-color: #f12727aa; 
+  cursor: pointer;
+  transition: border-color 0.25s;  */
+
 
 /* body {
   margin: 0;

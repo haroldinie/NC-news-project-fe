@@ -1,10 +1,16 @@
 import axios from "axios";
 
-export function getArticles() {
+export function getArticles(topic) {
+    let fetchUrl = `https://h-nc-news-project.onrender.com/api/articles/`
+    if (topic) {
+        fetchUrl += `?topic=${topic === "all" ? "" : topic}`
+    }
     return axios
-    .get("https://h-nc-news-project.onrender.com/api/articles")
-    .catch((err) => {
-        console.log(err)
+    .get(fetchUrl)
+    //  {params : {
+    //     topic: topic
+    .then((res) => {
+        return res.data.articles
     })
 }
 
@@ -38,8 +44,11 @@ export function postComment(article_id, comment) {
 }
 
 export function deleteComment(comment_id) {
-    console.log(comment_id)
     return axios
     .delete(`https://h-nc-news-project.onrender.com/api/comments/${comment_id}`)
 }
 
+export function getTopics() {
+    return axios
+    .get("https://h-nc-news-project.onrender.com/api/topics")
+}
