@@ -5,6 +5,8 @@ import Home from './components/Home'
 import Articles from './components/Articles'
 import SingleArticleCard from './components/SingleArticleCard'
 import { Topics } from './components/Topics'
+// import TopicFootball from './components/TopicFootball'
+
 
 function App() {
 
@@ -20,9 +22,9 @@ function App() {
       <Route path="/articles" element={ <Articles/>} />
       <Route path="/articles/:article_id" element={ <SingleArticleCard/>} />
        <Route path="/topics" element={<Topics />} />
-       {/* <Route path="/topics/topic=football" element={<FootballTopic />} />
-       <Route path="/topics/topic=cooking" element={<CookingTopic />} />
-       <Route path="/topics/topic=coding" element={<CodingTopic />} /> */}
+       {/* <Route path="/topics?topic=football" element={<TopicFootball />} /> */}
+       {/* <Route path="/topics?topic=cooking" element={<TopicCooking />} />
+       <Route path="/topics?topic=coding" element={<TopicCoding />} /> */}
     </Routes>
     </div>
     </div>
