@@ -16,9 +16,6 @@ export default function Articles() {
         setArticles(articles)
         setIsLoading(false)
       })
-      .catch((err) => {
-        console.log(err)    
-    })
     }, [])
 
 
@@ -38,6 +35,7 @@ export default function Articles() {
     ) :
     (
         <div className="allArticlesPage">
+        <p>You're on the ARTICLES page</p>
         <ul className="centerList">
                     {articles.map((article)=>{
                         return <AllArticlesCard key={article.article_id} article={article} /> 

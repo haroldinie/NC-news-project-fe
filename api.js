@@ -1,18 +1,18 @@
 import axios from "axios";
 
-export function getArticles(topic) {
+export function getArticles(topic, sortBy, orderBy) {
     let fetchUrl = `https://h-nc-news-project.onrender.com/api/articles/`
-    if (topic) {
-        fetchUrl += `?topic=${topic === "all" ? "" : topic}`
+    
+    if(topic, orderBy, sortBy) {
+        fetchUrl += `?topic=${topic === "all" ? "" : topic}&sort_by=${sortBy}&order=${orderBy}`
     }
     return axios
     .get(fetchUrl)
-    //  {params : {
-    //     topic: topic
     .then((res) => {
         return res.data.articles
     })
 }
+
 
 export function getArticleById(article_id) {
     return axios
@@ -46,9 +46,4 @@ export function postComment(article_id, comment) {
 export function deleteComment(comment_id) {
     return axios
     .delete(`https://h-nc-news-project.onrender.com/api/comments/${comment_id}`)
-}
-
-export function getTopics() {
-    return axios
-    .get("https://h-nc-news-project.onrender.com/api/topics")
 }

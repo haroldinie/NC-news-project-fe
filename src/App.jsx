@@ -22,9 +22,6 @@ function App() {
       <Route path="/articles" element={ <Articles/>} />
       <Route path="/articles/:article_id" element={ <SingleArticleCard/>} />
        <Route path="/topics" element={<Topics />} />
-       {/* <Route path="/topics?topic=football" element={<TopicFootball />} /> */}
-       {/* <Route path="/topics?topic=cooking" element={<TopicCooking />} />
-       <Route path="/topics?topic=coding" element={<TopicCoding />} /> */}
     </Routes>
     </div>
     </div>
