@@ -3,11 +3,14 @@ import axios from "axios";
 export function getArticles(topic, sortBy, orderBy) {
     let fetchUrl = `https://h-nc-news-project.onrender.com/api/articles/`
     
-    if(topic, orderBy, sortBy) {
-        fetchUrl += `?topic=${topic === "all" ? "" : topic}&sort_by=${sortBy}&order=${orderBy}`
-    }
     return axios
-    .get(fetchUrl)
+    .get(fetchUrl, { params:
+        {
+            topic,
+            sort_by: sortBy,
+            order: orderBy
+        }
+     })
     .then((res) => {
         return res.data.articles
     })
