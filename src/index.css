@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Museo Slab';
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -35,6 +35,7 @@ html {
   margin-bottom: 30px;
   color: red;
   max-width: 50%;
+  margin-left: 20px;
 }
 
 h4 {
@@ -58,10 +59,7 @@ h6 {
   text-align: left;
 }
 
-/* .body-text2 {
-  text-align: center;
-  border: 200px;
-} */
+
 
 header {
   display: flex;
@@ -70,14 +68,14 @@ header {
   justify-content:space-between;
   padding: 2em;
   box-shadow: 0 0 10px 0 #f12727aa;
-  /* text-shadow: 1px 1px 18px #f12727aa; */
 }
 
 h1 {
+  font-family: 'Museo Slab';
   font-size: 3.2em;
-  font-weight:750;
+  font-weight: 700;
   line-height: 1.1;
-  color: #ee0f0f;
+  color: #000000;
 }
 .headerMain {
   display: flex;
@@ -86,10 +84,13 @@ h1 {
   }
 
 .allArticlesPage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding-top: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 4rem;
 }
 
 
@@ -164,7 +165,20 @@ h1 {
 
 
 
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
 
+.error-message h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.error-message p {
+  font-size: 1em;
+}
 
 
 
@@ -176,7 +190,7 @@ h1 {
 .vertical {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;  
   justify-content: center;
 }
 
@@ -184,10 +198,11 @@ h1 {
   display: flex;
   flex-direction: column;
   background-color:  rgb(235, 232, 232);
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   padding: 10px;
   border-radius: 10px;
   max-width: 800px;
+  height: 381px;
   width: 500px;
   align-items: center;
   color: black;
@@ -241,8 +256,11 @@ h1 {
 .info2 {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
 }
 
 .vote {
@@ -276,7 +294,7 @@ h1 {
 }
 
 .link {
-  font-weight: 500;
+  font-weight: 800;
   color: #030000aa;
   text-decoration: inherit;
   border-radius: 10px;
@@ -291,18 +309,19 @@ h1 {
 }
 
 .articleByTopics {
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  max-width: 100%;
-  /* flex-direction:column; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
+ display: flex;
+ justify-content: flex-start;
+ align-items: center;
+ flex-direction: row;
+ flex-wrap: wrap;
+ margin-left: 4rem;
 }
 
 .allArticlesPageCards {
   display: inline-grid;
   /* grid-template-columns: 1fr 1fr 1fr; */
   max-width: 100%;
+  padding: 20px;
 }
 
 a:hover {

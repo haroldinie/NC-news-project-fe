@@ -3,11 +3,13 @@ import AllArticlesCard from "./AllArticlesCard"
 import { useState, useEffect } from "react"
 import { getArticles, getArticleById } from "../../api"
 import LoadingWheel from "./LoadingWheel"
+import ErrorHandling from "./ErrorHandling"
 
 export default function Articles() {
 
     const [ articles, setArticles ] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [error, setError ] = useState(null)
 
 
     useEffect(() => { 
@@ -17,7 +19,15 @@ export default function Articles() {
         setArticles(articles)
         setIsLoading(false)
       })
+      .catch((err) => {
+        setError(err)
+        setIsLoading(false)
+      })
     }, [])
+
+    if (error) {
+        return <ErrorHandling error={error}/>
+    }
 
 
     return isLoading ? (

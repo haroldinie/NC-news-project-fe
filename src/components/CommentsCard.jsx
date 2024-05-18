@@ -11,7 +11,6 @@ export default function CommentsCard({comment, article_id, setRefresh}) {
     
     function handleDelete(event) {
         setIsLoading(true)
-        // event.preventDefault()
         if (loggedUser === comment.author){
             deleteComment(comment.comment_id)
             .then(() => {

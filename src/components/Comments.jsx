@@ -3,6 +3,7 @@ import { getComments, postComment } from "../../api"
 import { useParams } from "react-router-dom"
 import CommentsCard from "./CommentsCard"
 import LoadingWheel from "./LoadingWheel"
+import ErrorHandling from "./ErrorHandling"
 
 export default function Comments(){
 
@@ -11,6 +12,7 @@ export default function Comments(){
     const [commentText, setCommentText] = useState("")
     const [isLoading, setIsLoading] = useState(false)
     const [refresh, setRefresh] = useState(0)
+    const [error, setError] = useState(null)
     
     useEffect(() => {
         setIsLoading(true)
@@ -21,8 +23,9 @@ export default function Comments(){
           setIsLoading(false)
         })
         .catch((err) => {
-            console.log(err)
-        })
+            setError(err)
+            setIsLoading(false)
+          })
     }, [article_id, refresh])
 
     
@@ -42,6 +45,10 @@ export default function Comments(){
         }).catch((err) => {
             console.log(err)
         })
+    }
+
+    if (error) {
+        return <ErrorHandling error={error}/>
     }
 
     return isLoading ? (

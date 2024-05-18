@@ -99,12 +99,12 @@ export function Topics() {
         </div>
         <br>
         </br>
+            </main>
         <div className="articleByTopics">
                      {articles.map((article)=>{
                         return <AllArticlesCard key={article.article_id} article={article} /> 
                     })}
                 </div>
-            </main>
             </div>
     )
 }
